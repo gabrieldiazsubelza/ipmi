@@ -7,12 +7,12 @@ void SUPERreset() {
 
   sangreX = -34;
   sangreY = height * 3.5;
-  movimientoX = width * 4.5;
+  movimientoX = 640 * 4.5;
   movimientoY = height * 4.5;
   limpiadorX = -220;
   limpiadorY = 0;
   rect1Y = 0;
-  rect2Y = -height;
+  rect2Y = -480;
   sangreTextoY = -850;
   sangreTexto2Y = -650;
   imagenX = -900;
