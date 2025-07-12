@@ -1,5 +1,12 @@
 //Diaz Subelza Gabriel
-//tp2 Comisión 3
+//tp2 (recuperatorio) Comisión 3
+//Comentario adicional:
+//La primera ejecución del código funciona bien.
+//Sin embargo, cuando la presentación se reinicia, las variables de la diapositiva 1
+//no se resetean correctamente, por lo cual la pantalla se mantiene del color del background().
+//Aun así, el resto de las variables si se resetean correctamente,
+//por lo cual el resto de las diapositivas funcionan al ser reiniciada la presentación.
+//No supe cómo solucionar este error.
 
 PFont fuente1, fuente2;
 PImage sangre, sangreTexto, sangreTexto2, limpiador, robot1, robot2, balde, baldeSpill;
@@ -10,7 +17,7 @@ boolean REplay = false;
 float opacidad = 0;
 float playX, playY, playDiam, playDiam2;
 float sangreX = -34, sangreY = height*3.5;
-float movimientoX = width*4.5, movimientoY = height*4.5;
+float movimientoX = 640*4.5, movimientoY = height*4.5;
 float limpiadorX, limpiadorY, rect1Y, rect2Y;
 float sangreTextoY = -850, sangreTexto2Y = -650;
 float imagenX = -900, imagenY = 0;
@@ -34,7 +41,7 @@ void setup() {
   baldeSpill = loadImage("baldeSpill.png");
   robot1 = loadImage("robot1.jpg");
   robot2 = loadImage("robot2.jpg");
-  playX = width/2;
+  playX = 640/2;
   playY = height/2 + 150;
   playDiam = 80;
   playDiam2 = 80;
@@ -44,7 +51,7 @@ void setup() {
 void draw() {
   if (diapositiva == 0) {
     background(245);
-    image(balde, width/2 - 115, height/2 - 100, 200, 200);
+    image(balde, 640/2 - 115, 480/2 - 100, 200, 200);
     noStroke();
     fill(0);
     ellipse(playX, playY, playDiam, playDiam);
@@ -63,12 +70,12 @@ void draw() {
     textFont(fuente1, 90);
     textAlign(CENTER, CENTER);
     fill(212, 0, 0);
-    text(titulo1, width/2, movimientoY);
-    text(titulo2, width/2, movimientoY+100);
+    text(titulo1, 640/2, movimientoY);
+    text(titulo2, 640/2, movimientoY+100);
     if (contador > 60 && sangreY >= -380) {
       sangreY = sangreY - 2.5;
     }
-    if (contador > 120 && movimientoY >= height/2 + height/8) {
+    if (contador > 120 && movimientoY >= 480/2 + 480/8) {
       movimientoY = movimientoY - 1.9;
     }
     if (contador > 510) {
@@ -82,8 +89,8 @@ void draw() {
     textFont(fuente1, 90);
     textAlign(CENTER, CENTER);
     fill(212, 0, 0);
-    text(titulo1, width/2, movimientoY);
-    text(titulo2, width/2, movimientoY+100);
+    text(titulo1, 640/2, movimientoY);
+    text(titulo2, 640/2, movimientoY+100);
     fill(245);
     rect(-200, rect1Y, 600, 585);
     rect(100, rect2Y, 600, 485);
@@ -203,7 +210,7 @@ void draw() {
     textFont(fuente1, 90);
     textAlign(CENTER, CENTER);
     fill(212, 0, 0, opacidad);
-    text("FIN.", width/2, height/2);
+    text("FIN.", 640/2, height/2);
 
     if (contador <= 10) {
       opacidad += 0.5;
